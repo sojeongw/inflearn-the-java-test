@@ -4,10 +4,14 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// 테스트 전체에 적용된다.
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class StudyTest {
 
     // JUnit 5부터는 public을 붙이지 않아도 된다. 리플렉션을 사용해서 private 한 메서드에도 접근 가능하므로 굳이 public일 필요가 없기 때문이다.
     @Test
+    // 해당 테스트에만 적용된다. 이모지도 가능하다.
+    @DisplayName("스터디 만들기")
     void a() {
         Study study = new Study();
         assertNotNull(study);
